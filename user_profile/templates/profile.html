@@ -1,0 +1,162 @@
+{% extends 'layout.html' %}
+{% block title %}
+My Profile
+{% endblock %}
+
+{% block content %} 
+<div class="row col-md-6 col-md-offset-3 text-center colorlib-heading" style="margin-top: 30px">
+        <h2><span>Welcome {{user.username}}</span></h2>
+</div>
+<div class="colorlib-shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+                <h2><span>My Products</span></h2>
+                <p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+        </div>
+        <div class="row" style="height:500px;overflow:scroll">
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-9.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="{% url 'cart' %}">Edit</a></span> 
+                                <span><a href="{% url 'product_detail' %}">Delete</a></span> 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-10.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="{% url 'cart' %}">Edit</a></span> 
+                                <span><a href="{% url 'product_detail' %}">Delete</a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-11.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="{% url 'cart' %}">Edit</a></span> 
+                                <span><a href="{% url 'product_detail' %}">Delete</a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-12.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="{% url 'cart' %}">Edit</a></span> 
+                                <span><a href="{% url 'product_detail' %}">Delete</a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-13.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="{% url 'cart' %}">Edit</a></span> 
+                                <span><a href="{% url 'product_detail' %}">Delete</a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-14.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="{% url 'cart' %}">Edit</a></span> 
+                                <span><a href="{% url 'product_detail' %}">Delete</a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-15.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="{% url 'cart' %}">Edit</a></span> 
+                                <span><a href="{% url 'product_detail' %}">Delete</a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-16.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="{% url 'cart' %}">Edit</a></span> 
+                                <span><a href="{% url 'product_detail' %}">Delete</a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <form action="/product/add_product">
+            <button type="submit" class="btn btn-primary">Add New Product</button>
+        </form>
+    </div>
+</div>
+{% endblock %} 

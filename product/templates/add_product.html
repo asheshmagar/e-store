@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+{% block title %}
+Add New Product
+{% endblock %}
+
+{% block content %}   
+<form method="POST" class="post-form" action="/product/add_product/"
+enctype="multipart/form-data">    
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Enter Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label for="pid" class="col-sm-2 col-form-label">Product Id:</label>  
+    <div class="col-sm-4">     
+      {{ form.pid }}  
+    </div>  
+  </div> 
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Product Name:</label>  
+    <div class="col-sm-4">  
+      {{ form.pname }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Product Price:</label>  
+    <div class="col-sm-4">  
+      {{ form.pprice }}  
+    </div>   
+  </div>
+
+  <div class="form-group row">  
+    <label for="prating" class="col-sm-2 col-form-label">Product Rating:</label>  
+    <div class="col-sm-4">  
+      {{ form.prating }}  
+    </div>   
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Short Description:</label>  
+    <div class="col-sm-4">  
+      {{ form.pshort_description }}  
+    </div>   
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Long Description:</label>  
+    <div class="col-sm-4">  
+      {{ form.plong_description }}  
+    </div>   
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Manufacturer:</label>  
+    <div class="col-sm-4">  
+      {{ form.pmanufacturer }}  
+    </div>   
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Image:</label>  
+    <div class="col-sm-4">  
+      {{ form.pimage }}  
+    </div>   
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Color:</label>  
+    <div class="col-sm-4">  
+      {{ form.pcolor }}  
+    </div>   
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Size:</label>  
+    <div class="col-sm-4">  
+      {{ form.psize }}  
+    </div>   
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+{% endblock %}

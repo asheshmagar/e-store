@@ -1,0 +1,290 @@
+{% extends 'layout.html' %}
+{% block title %}
+Checkout
+{% endblock %}
+
+{% block content %}
+<aside id="colorlib-hero" class="breadcrumbs">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style="background-image: url(/static/images/cover-img-1.jpg);">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h1>Checkout</h1>
+                                <h2 class="bread"><span><a href="{% url 'home' %}">Home</a></span> <span><a
+                                            href="{% url 'cart' %}">Shopping Cart</a></span> <span>Checkout</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<div class="colorlib-shop">
+    <div class="container">
+        <div class="row row-pb-md">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="process-wrap">
+                    <div class="process text-center active">
+                        <p><span>01</span></p>
+                        <h3>Shopping Cart</h3>
+                    </div>
+                    <div class="process text-center active">
+                        <p><span>02</span></p>
+                        <h3>Checkout</h3>
+                    </div>
+                    <div class="process text-center">
+                        <p><span>03</span></p>
+                        <h3>Order Complete</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--new start-->
+        <div class="row">
+            <div class="col-md-7">
+                <form id="billing_form" method="post" class="colorlib-form" action="{% url 'order_complete' %}">
+                    {% csrf_token %}
+                    <h2>Billing Details</h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="country">Select Country</label>
+                                <div class="form-field">
+                                    <i class="icon icon-arrow-down3"></i>
+                                    {{form.country}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label for="first_name">First Name</label>
+                                {{form.first_name}}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="last_name">Last Name</label>
+                                {{form.last_name}}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="company_name">Company Name</label>
+                                {{form.company_name}}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="first_address">Address</label>
+                                {{form.first_address}}
+                            </div>
+                            <div class="form-group">
+                                {{form.second_address}}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="town">Town/City</label>
+                                {{form.town}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label for="state">State/Province</label>
+                                {{form.state}}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="zip_code">Zip/Postal Code</label>
+                                {{form.zip_code}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label for="email_address">E-mail Address</label>
+                                {{form.email_address}}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone_number">Phone Number</label>
+                                {{form.phone_number}}
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="radio">
+                                  <label><input type="radio" name="optradio">Create an Account? </label>
+                                  <label><input type="radio" name="optradio"> Ship to different address</label>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <h2 style="margin-bottom:10px;margin-top:15px">Payment Method</h2>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="radio">
+                                        {{form.payment_option}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="checkbox">
+                                    <label>{{form.terms_agreed}}I have read and accepted the terms and
+                                        conditions</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5">
+                <div class="cart-detail">
+                    <h2>Cart Total</h2>
+                    <ul>
+                        <li>
+                            <span>Subtotal</span> <span>$100.00</span>
+                            <ul>
+                                <li><span>1 x Product Name</span> <span>$99.00</span></li>
+                                <li><span>1 x Product Name</span> <span>$78.00</span></li>
+                            </ul>
+                        </li>
+                        <li><span>Shipping</span> <span>$0.00</span></li>
+                        <li><span>Order Total</span> <span>$180.00</span></li>
+                    </ul>
+                </div>
+                
+                <div class="row">
+                        <div class="col-md-12">
+                                <button form="billing_form" type="submit" class="btn btn-primary">Place an order</button>
+                        </div>
+                    <!-- <div class="col-md-12">
+                        <p><a href="{% url 'order_complete' %}" class="btn btn-primary">Place an order</a></p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!--new end-->
+    </div>
+</div>
+
+<div class="colorlib-shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+                <h2><span>Recommended Products</span></h2>
+                <p>We love to tell our successful far far away, behind the word mountains, far from the countries
+                    Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-5.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="#"><i class="icon-shopping-cart"></i></a></span>
+                                <span><a href="{% url 'product_detail' %}"><i class="icon-eye"></i></a></span>
+                                <span><a href="#"><i class="icon-heart3"></i></a></span>
+                                <span><a href="{% url 'add_to_wishlist' %}"><i class="icon-bar-chart"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-6.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="#"><i class="icon-shopping-cart"></i></a></span>
+                                <span><a href="{% url 'product_detail' %}"><i class="icon-eye"></i></a></span>
+                                <span><a href="#"><i class="icon-heart3"></i></a></span>
+                                <span><a href="{% url 'add_to_wishlist' %}"><i class="icon-bar-chart"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-7.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="#"><i class="icon-shopping-cart"></i></a></span>
+                                <span><a href="{% url 'product_detail' %}"><i class="icon-eye"></i></a></span>
+                                <span><a href="#"><i class="icon-heart3"></i></a></span>
+                                <span><a href="{% url 'add_to_wishlist' %}"><i class="icon-bar-chart"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="product-entry">
+                    <div class="product-img" style="background-image: url(/static/images/item-8.jpg);">
+                        <p class="tag"><span class="new">New</span></p>
+                        <div class="cart">
+                            <p>
+                                <span class="addtocart"><a href="#"><i class="icon-shopping-cart"></i></a></span>
+                                <span><a href="{% url 'product_detail' %}"><i class="icon-eye"></i></a></span>
+                                <span><a href="#"><i class="icon-heart3"></i></a></span>
+                                <span><a href="{% url 'add_to_wishlist' %}"><i class="icon-bar-chart"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <h3><a href="{% url 'shop' %}">Floral Dress</a></h3>
+                        <p class="price"><span>$300.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="colorlib-subscribe">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-6 text-center">
+                    <h2><i class="icon-paperplane"></i>Sign Up for a Newsletter</h2>
+                </div>
+                <div class="col-md-6">
+                    <form class="form-inline qbstp-header-subscribe">
+                        <div class="row">
+                            <div class="col-md-12 col-md-offset-0">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

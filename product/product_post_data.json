@@ -1,0 +1,11 @@
+{
+    "pid": "thisrtlarge",
+    "pname": "thsirt",
+    "pprice": 1000,
+    "prating":3,
+    "pshort_description":"this is our new product",
+    "plong_description":"this is a long description",
+    "pmanufacturer":"manufacturer is cg company",
+    "pcolor":1,
+    "psize":1
+ }
